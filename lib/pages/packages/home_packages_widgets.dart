@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tips/globals/globals_vars.dart';
 import 'package:flutter_tips/globals/globals_widgets.dart';
+import 'package:flutter_tips/pages/packages/listPackages/categoria11/liquid_swipe/liquid_swipe_code.dart';
 import 'package:flutter_tips/pages/packages/listPackages/pack_teste/pack_teste_code.dart';
 import 'package:flutter_tips/pages/packages/listPackages/pack_teste/pack_teste_infos.dart';
 import 'package:flutter_tips/pages/packages/view_package/view_package_page.dart';
+
+import 'listPackages/categoria11/liquid_swipe/liquid_swipe_infos.dart';
 
 class HomePackagesWidgets {
   BuildContext context;
   HomePackagesWidgets(this.context);
 
   List listPackages = [
+    {
+      "codigo": LiquidSwipeCode(),
+      "infos": LiquidSwipeInfos()
+    },
     {
       "codigo": PackTeste(),
       "infos": PackTestInfos()

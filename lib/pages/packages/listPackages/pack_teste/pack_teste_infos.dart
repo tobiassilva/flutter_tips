@@ -16,5 +16,4 @@ class PackTestInfos {
     Observações do plugin
   """; //deixar null quando nao tiver
   
-  
 }

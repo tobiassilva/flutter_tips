@@ -89,6 +89,7 @@ class _ViewPackagePageState extends State<ViewPackagePage> with TickerProviderSt
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: GlobalsStyles().fontePrincipal),
       home: SafeArea(
         child: Scaffold(
           backgroundColor: GlobalsStyles().secundaryColor,

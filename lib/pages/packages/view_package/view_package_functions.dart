@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_tips/pages/packages/globals_packages.dart';
 
@@ -17,7 +15,6 @@ class ViewPackageFunctions {
         return;
       }
     });
-    print('SAIU AQUI;');
     return;
     
   }

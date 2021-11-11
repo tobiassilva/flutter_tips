@@ -15,6 +15,7 @@ class _HomePackagesPageState extends State<HomePackagesPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: GlobalsStyles().fontePrincipal),
       home: Scaffold(
         backgroundColor: GlobalsStyles().secundaryColor,
         body: Container(

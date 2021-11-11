@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tips/pages/packages/view_package/view_package_functions.dart';
 import 'package:provider/provider.dart';
 
+import 'globals/globals_vars.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -21,9 +23,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Tips',
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
         theme: ThemeData(
           //primarySwatch: Colors.blue,
+          fontFamily: GlobalsStyles().fontePrincipal
         ),
         home: const HomePage(),
       ),

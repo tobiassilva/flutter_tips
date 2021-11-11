@@ -35,7 +35,7 @@ class ViewPackagesWidgets {
           ),
           GlobalsWidgets()
               .subtituloComBarra(_jsonInfos.nome, GlobalsStyles().sizeTitulo),
-          _jsonInfos.versaoPackage != null
+          _jsonInfos.versaoPackage != ''
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -52,7 +52,7 @@ class ViewPackagesWidgets {
                   ],
                 )
               : Container(),
-          _viewPackageFunctions.categoriaPackage != null
+          _viewPackageFunctions.categoriaPackage != ''
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -69,7 +69,7 @@ class ViewPackagesWidgets {
                   ],
                 )
               : Container(),
-          _jsonInfos.observacoes != null
+          _jsonInfos.observacoes != ''
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

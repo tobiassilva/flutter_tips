@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GlobalsStyles {
+  var fontePrincipal = '';
   var primaryColor = const Color.fromRGBO(240, 165, 0, 1);
   var secundaryColor = const Color.fromRGBO(230, 230, 230, 1);
   var tertiaryColor = const Color.fromRGBO(51, 71, 86, 1);
