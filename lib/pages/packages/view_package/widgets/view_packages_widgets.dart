@@ -15,7 +15,7 @@ class ViewPackagesWidgets {
     return SourceCodeView(
       filePath: _caminhoCodigo,
       codeLinkPrefix:
-          '${Variaveis().linkBaseGithub}',
+          Variaveis().linkBaseGithub,
     );
   }
 

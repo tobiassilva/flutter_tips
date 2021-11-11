@@ -262,7 +262,7 @@ packages:
     source: hosted
     version: "2.0.2"
   google_fonts:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: google_fonts
       url: "https://pub.dartlang.org"
@@ -380,6 +380,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  nice_intro:
+    dependency: "direct main"
+    description:
+      name: nice_intro
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.4"
   package_config:
     dependency: transitive
     description:
@@ -429,6 +436,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.3"
+  pigment:
+    dependency: transitive
+    description:
+      name: pigment
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.4"
   platform:
     dependency: transitive
     description:
@@ -560,6 +574,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  tinycolor:
+    dependency: transitive
+    description:
+      name: tinycolor
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   typed_data:
     dependency: transitive
     description:

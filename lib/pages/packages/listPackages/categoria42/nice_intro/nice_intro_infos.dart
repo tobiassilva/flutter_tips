@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class NiceIntroInfos {
   
-  String caminhoCodigo = '/lib/pages/packages/listPackages/categoria42/nice_intro/nice_intro_code.dart';
+  String caminhoCodigo = 'lib/pages/packages/listPackages/categoria42/nice_intro/nice_intro_code.dart';
 
   String nome = 'Nice Intro';
   String versaoPackage = '0.1.4';

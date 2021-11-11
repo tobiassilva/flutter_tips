@@ -22,6 +22,7 @@ dependencies:
   #google_fonts: ^0.4.0
   liquid_swipe: ^2.1.1
   mobx: ^2.0.0
+  nice_intro: ^0.1.4
   provider: ^6.0.1
   url_launcher: ^6.0.12
   #shelf: ^1.0.0
@@ -35,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dependency_overrides:
+  google_fonts: ^2.0.0
   #convert: ^3.0.0
   #crypto: ^3.0.1
   #http: ^0.13.4
@@ -60,7 +62,10 @@ flutter:
 
     # Caminhos das Packages/codigos que aparecerão
 
-    #categoria 11
+    #categoria 42
+    - lib/pages/packages/listPackages/categoria42/nice_intro/nice_intro_code.dart
+
+    #categoria 80
     - lib/pages/packages/listPackages/categoria80/liquid_swipe/liquid_swipe_code.dart
 
     - lib/pages/packages/listPackages/pack_teste/pack_teste_code.dart

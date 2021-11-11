@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Variaveis {
-  String linkBaseGithub = 'https://github.com/tobiassilva/flutter_tips/tree/master';
+  String linkBaseGithub = 'https://github.com/tobiassilva/flutter_tips/tree/master/';
 }
 
 class GlobalsStyles {
