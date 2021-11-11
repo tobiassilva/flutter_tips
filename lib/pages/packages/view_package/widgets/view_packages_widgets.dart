@@ -15,7 +15,7 @@ class ViewPackagesWidgets {
     return SourceCodeView(
       filePath: _caminhoCodigo,
       codeLinkPrefix:
-          'https://github.com/tobiassilva/todo_list_MobX/blob/master/',
+          '${Variaveis().linkBaseGithub}',
     );
   }
 
@@ -104,9 +104,9 @@ class ViewPackagesWidgets {
                 SizedBox(
                   height: 20,
                 ),
-                _jsonInfos.linkGitHub != ''
+                _jsonInfos.caminhoCodigo != ''
                     ? _botaoPack('assets/images/geral/github_icon.png',
-                        "GitHub", Colors.black, _jsonInfos.linkGitHub)
+                        "GitHub", Colors.black, "${Variaveis().linkBaseGithub}${_jsonInfos.caminhoCodigo}")
                     : Container(),
                 SizedBox(
                   height: 20,

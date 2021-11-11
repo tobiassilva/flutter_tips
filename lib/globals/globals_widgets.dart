@@ -4,6 +4,38 @@ import 'globals_vars.dart';
 
 class GlobalsWidgets {
 
+  Widget appBar(_context, _titulo, ) {
+    return Theme(
+      data: ThemeData(fontFamily: GlobalsStyles().fontePrincipal),
+      child: Material(
+        color: GlobalsStyles().secundaryColor,
+        elevation: 0,
+        child: Row(
+          children: [
+            IconButton(
+              onPressed: (){
+                Navigator.pop(_context);
+              }, 
+              icon: Icon(
+                Icons.arrow_back_ios_new_sharp,
+                size: GlobalsStyles().sizeSubtitulo,
+                color: GlobalsStyles().textColorForte
+              ),
+            ),
+            SizedBox(width: 15,),
+            Text(
+              _titulo,
+              style: TextStyle(
+                fontSize: GlobalsStyles().sizeSubtitulo,
+                color: GlobalsStyles().textColorForte
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget subtituloComBarra(_texto, _sizeText){
     return Row(
       children: [

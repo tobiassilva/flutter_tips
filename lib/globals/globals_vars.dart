@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+class Variaveis {
+  String linkBaseGithub = 'https://github.com/tobiassilva/flutter_tips/tree/master';
+}
+
 class GlobalsStyles {
   var fontePrincipal = '';
   var primaryColor = const Color.fromRGBO(240, 165, 0, 1);

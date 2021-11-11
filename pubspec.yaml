@@ -61,7 +61,7 @@ flutter:
     # Caminhos das Packages/codigos que aparecerão
 
     #categoria 11
-    - lib/pages/packages/listPackages/categoria11/liquid_swipe/liquid_swipe_code.dart
+    - lib/pages/packages/listPackages/categoria80/liquid_swipe/liquid_swipe_code.dart
 
     - lib/pages/packages/listPackages/pack_teste/pack_teste_code.dart
 

@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tips/globals/globals_vars.dart';
 import 'package:flutter_tips/globals/globals_widgets.dart';
-import 'package:flutter_tips/pages/packages/listPackages/categoria11/liquid_swipe/liquid_swipe_code.dart';
+
+import 'package:flutter_tips/pages/packages/listPackages/categoria42/nice_intro/nice_intro_code.dart';
+import 'package:flutter_tips/pages/packages/listPackages/categoria42/nice_intro/nice_intro_infos.dart';
+import 'listPackages/categoria80/liquid_swipe/liquid_swipe_code.dart';
+import 'listPackages/categoria80/liquid_swipe/liquid_swipe_infos.dart';
+
 import 'package:flutter_tips/pages/packages/listPackages/pack_teste/pack_teste_code.dart';
 import 'package:flutter_tips/pages/packages/listPackages/pack_teste/pack_teste_infos.dart';
 import 'package:flutter_tips/pages/packages/view_package/view_package_page.dart';
 
-import 'listPackages/categoria11/liquid_swipe/liquid_swipe_infos.dart';
 
 class HomePackagesWidgets {
   BuildContext context;
   HomePackagesWidgets(this.context);
 
   List listPackages = [
+    {
+      "codigo": NiceIntroCode(),
+      "infos": NiceIntroInfos()
+    },
     {
       "codigo": LiquidSwipeCode(),
       "infos": LiquidSwipeInfos()
@@ -32,8 +40,8 @@ class HomePackagesWidgets {
     return ListView(
       shrinkWrap: true,
       children: [
-        /*_capa(),
-        const SizedBox(height: 25,),*/
+        GlobalsWidgets().appBar(context, "Packages"),
+        const SizedBox(height: 5,),
         _listaOpcoesWidget()
       ],
     );
@@ -41,9 +49,10 @@ class HomePackagesWidgets {
 
   Widget _listaOpcoesWidget(){
     return Container(
-      margin: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+      margin: EdgeInsets.only(left: 10, right: 10, top: 0, bottom: 10),
       child: Column(
         children: [
+
           SizedBox(height: 20,),
           GlobalsWidgets().subtituloComBarra('Escolha uma Opção', GlobalsStyles().sizeSubtitulo),
           SizedBox(height: 20,),
@@ -54,7 +63,7 @@ class HomePackagesWidgets {
             itemBuilder: (_, index){
               return Container(
                 margin: EdgeInsets.only(top: 10, bottom: 10),
-                child: _cardPackagesOpcao(/*FontAwesomeIcons.plus,*/ listPackages[index]),//listPackages[index].packageTesteCode(),
+                child: _cardPackagesOpcao(listPackages[index]),
               );
             },
           ),
@@ -63,7 +72,7 @@ class HomePackagesWidgets {
     );
   }
 
-  Widget _cardPackagesOpcao(/*_icon,*/ _jsonPackage){
+  Widget _cardPackagesOpcao(_jsonPackage){
     return Row(
       children: [
         Expanded(
@@ -88,24 +97,6 @@ class HomePackagesWidgets {
                 padding: EdgeInsets.fromLTRB(15, 12, 15, 12),
                 child: Row(
                   children: [
-                    /*Container(
-                      padding: EdgeInsets.all(6),
-                      decoration: BoxDecoration(
-                        color: GlobalsStyles().primaryColor,
-
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(7),
-                          topRight: Radius.circular(7),
-                          bottomLeft: Radius.circular(7)
-                        )
-                      ),
-                      child: Icon(
-                        _icon,
-                        color: GlobalsStyles().textColorSecundary,
-                        size: GlobalsStyles().sizeSubtitulo,
-                      ),
-                    ),
-                    SizedBox(width: 10,),*/
                     Expanded(
                       child: Text(
                         _jsonPackage['infos'].nome,
