@@ -82,8 +82,10 @@ flutter:
     - assets/images/geral/yt_icon.png
 
     # packages
+    - assets/images/packages/app_installation-512.png
     - assets/images/packages/logo_viagem.png
-  #   - images/a_dot_ham.jpeg
+    - assets/images/packages/Team_pana-300.png
+    - assets/images/packages/Telecommuting_pana-300.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

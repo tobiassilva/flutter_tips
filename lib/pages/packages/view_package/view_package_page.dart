@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 
 import 'widgets/view_packages_widgets.dart';
 
-
 class ViewPackagePage extends StatefulWidget {
   var _jsonPackage;
   ViewPackagePage(this._jsonPackage);
@@ -16,15 +15,16 @@ class ViewPackagePage extends StatefulWidget {
   _ViewPackagePageState createState() => _ViewPackagePageState(_jsonPackage);
 }
 
-class _ViewPackagePageState extends State<ViewPackagePage> with TickerProviderStateMixin{
-  
+class _ViewPackagePageState extends State<ViewPackagePage>
+    with TickerProviderStateMixin {
   var _jsonPackage;
   _ViewPackagePageState(this._jsonPackage);
 
   late AnimationController _animationController;
-  var _bottomNavIndex = 0;
+  var _bottomNavIndex = 2;
   late Animation<double> animation;
   late CurvedAnimation curve;
+  bool _viewTela = false;
 
   final iconList = <IconData>[
     Icons.remove_red_eye_sharp,
@@ -37,19 +37,12 @@ class _ViewPackagePageState extends State<ViewPackagePage> with TickerProviderSt
   ];
 
   late ViewPackageFunctions viewPackageFunctions;
-  
+
   @override
   void initState() {
-
-    /*final systemTheme = SystemUiOverlayStyle.light.copyWith(
-      systemNavigationBarColor: GlobalsStyles().tertiaryColor,
-      systemNavigationBarIconBrightness: Brightness.light,
-    );
-    SystemChrome.setSystemUIOverlayStyle(systemTheme);*/
-
     _animationController = AnimationController(
-      duration: Duration(seconds: 1), vsync: this,
-      
+      duration: Duration(seconds: 1),
+      vsync: this,
     );
 
     curve = CurvedAnimation(
@@ -95,76 +88,121 @@ class _ViewPackagePageState extends State<ViewPackagePage> with TickerProviderSt
           backgroundColor: GlobalsStyles().secundaryColor,
           body: Container(
             height: MediaQuery.of(context).size.height,
-            child: _bottomNavIndex == 0
-            ? ViewPackagesWidgets(context).viewPackagesWidgets(_jsonPackage["codigo"]) : 
-            _bottomNavIndex == 1 ? ViewPackagesWidgets(context).infosPackagesWidgets(_jsonPackage["infos"])
-            : _bottomNavIndex == 2 ? ViewPackagesWidgets(context).codePackagesWidgets("${_jsonPackage["infos"].caminhoCodigo}") : Container(),
+            child: _viewTela
+            //VER EM TELA CHEIA
+                ? Column(
+                    children: [
+                      Material(
+                        elevation: 2,
+                        child: Container(
+                          padding: EdgeInsets.only(left: 10, right: 10),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _viewTela = false;
+                                  });
+                                },
+                                icon: Icon(Icons.close,
+                                    size: GlobalsStyles().sizeSubtitulo,
+                                    color: GlobalsStyles().textColorForte),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                          child: ViewPackagesWidgets(context)
+                              .viewPackagesWidgets(_jsonPackage["codigo"]))
+                    ],
+                  )
+                : _bottomNavIndex == 1
+                    ? ViewPackagesWidgets(context)
+                        .infosPackagesWidgets(_jsonPackage["infos"])
+                    : _bottomNavIndex == 2
+                        ? ViewPackagesWidgets(context).codePackagesWidgets(
+                            "${_jsonPackage["infos"].caminhoCodigo}")
+                        : Container(),
           ),
 
           //TAB
-          
-          floatingActionButton: ScaleTransition(
-            scale: animation,
-            child: FloatingActionButton(
-              elevation: 8,
-              backgroundColor: GlobalsStyles().primaryColor,
-              child: Icon(
-                Icons.code,
-                color: _bottomNavIndex == 2 ? GlobalsStyles().textColorSecundaryTransp : GlobalsStyles().tertiaryColor,
-              ),
-              onPressed: () {
-                /*_animationController.reset();
-                _animationController.forward();*/
-                setState(() => _bottomNavIndex = 2);
-              },
-            ),
-          ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar: AnimatedBottomNavigationBar.builder(
-            
-            itemCount: iconList.length,
-            tabBuilder: (int index, bool isActive) {
-              final color = isActive ? GlobalsStyles().primaryColor : GlobalsStyles().textColorSecundary;
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    iconList[index],
-                    size: 30,
-                    color: color,
-                  ),
-                  const SizedBox(height: 4),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Text(
-                      "${iconTextList[index]}",
-                      maxLines: 1,
-                      style: TextStyle(color: color),
-                    ),
-                  )
-                ],
-              );
-            },
 
-              activeIndex: _bottomNavIndex,
-              gapLocation: GapLocation.center,
-              notchSmoothness: NotchSmoothness.defaultEdge,
-              onTap: (index) => setState(() {
-                _bottomNavIndex = index;
-                print("index =>>> $index");
-              } ),
-              //other params
-            splashColor: GlobalsStyles().primaryColor,
-            leftCornerRadius: 15,
-            rightCornerRadius: 15,
-            
-            backgroundColor: GlobalsStyles().tertiaryColor,
-            
-            //notchAndCornersAnimation: animation,
-            //splashSpeedInMilliseconds: 300,
-              
-          ),
+          floatingActionButton: !_viewTela
+              ? ScaleTransition(
+                  scale: animation,
+                  child: FloatingActionButton(
+                    elevation: 8,
+                    backgroundColor: GlobalsStyles().primaryColor,
+                    child: Icon(
+                      Icons.code,
+                      color: _bottomNavIndex == 2
+                          ? GlobalsStyles().textColorSecundaryTransp
+                          : GlobalsStyles().tertiaryColor,
+                    ),
+                    onPressed: () {
+                      /*_animationController.reset();
+                _animationController.forward();*/
+                      setState(() => _bottomNavIndex = 2);
+                    },
+                  ),
+                )
+              : null,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          bottomNavigationBar: !_viewTela
+              ? AnimatedBottomNavigationBar.builder(
+                  itemCount: iconList.length,
+                  tabBuilder: (int index, bool isActive) {
+                    final color = isActive
+                        ? GlobalsStyles().primaryColor
+                        : GlobalsStyles().textColorSecundary;
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          iconList[index],
+                          size: 30,
+                          color: color,
+                        ),
+                        const SizedBox(height: 4),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: Text(
+                            "${iconTextList[index]}",
+                            maxLines: 1,
+                            style: TextStyle(color: color),
+                          ),
+                        )
+                      ],
+                    );
+                  },
+
+                  activeIndex: _bottomNavIndex,
+                  gapLocation: GapLocation.center,
+                  notchSmoothness: NotchSmoothness.defaultEdge,
+                  onTap: (index) => setState(() {
+                    if (index == 0) {
+                      //visualizar
+                      //_bottomNavIndex = index;
+                      _viewTela = true;
+                    } else {
+                      _bottomNavIndex = index;
+                      print("index =>>> $index");
+                    }
+                  }),
+                  //other params
+                  splashColor: GlobalsStyles().primaryColor,
+                  leftCornerRadius: 15,
+                  rightCornerRadius: 15,
+
+                  backgroundColor: GlobalsStyles().tertiaryColor,
+
+                  //notchAndCornersAnimation: animation,
+                  //splashSpeedInMilliseconds: 300,
+                )
+              : null,
         ),
       ),
     );
