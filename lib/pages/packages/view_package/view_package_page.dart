@@ -1,6 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_tips/globals/globals_vars.dart';
 import 'package:flutter_tips/pages/packages/view_package/view_package_functions.dart';
 import 'package:provider/provider.dart';

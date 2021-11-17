@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 class GlobalsPackages {
-
   List categoriasPackages = [
     //a
     //b
     {
       "id": 10,
-      "nome": "Bottom Bar"
+      "nome": "Bottom Bar",
     },
     //c
     //d
@@ -18,7 +17,7 @@ class GlobalsPackages {
     //i
     {
       "id": 42,
-      "nome": "Intro / splash"
+      "nome": "Intro / splash",
     },
     //j
     //k
@@ -33,11 +32,11 @@ class GlobalsPackages {
     //t
     {
       "id": 74,
-      "nome": "Tab Bar"
+      "nome": "Tab Bar",
     },
     {
       "id": 80,
-      "nome": "Transação de Páginas"
+      "nome": "Transação de Páginas",
     },
     //u
     //v
@@ -45,7 +44,6 @@ class GlobalsPackages {
     //x
     //y
     //z
-    
   ];
 }
 

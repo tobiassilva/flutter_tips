@@ -6,9 +6,6 @@ import 'package:flutter_tips/pages/packages/listPackages/categoria42/nice_intro/
 import 'package:flutter_tips/pages/packages/listPackages/categoria42/nice_intro/nice_intro_infos.dart';
 import 'listPackages/categoria80/liquid_swipe/liquid_swipe_code.dart';
 import 'listPackages/categoria80/liquid_swipe/liquid_swipe_infos.dart';
-
-import 'package:flutter_tips/pages/packages/listPackages/pack_teste/pack_teste_code.dart';
-import 'package:flutter_tips/pages/packages/listPackages/pack_teste/pack_teste_infos.dart';
 import 'package:flutter_tips/pages/packages/view_package/view_package_page.dart';
 
 
@@ -18,20 +15,14 @@ class HomePackagesWidgets {
 
   List listPackages = [
     {
-      "codigo": NiceIntroCode(),
-      "infos": NiceIntroInfos()
-    },
-    {
       "codigo": LiquidSwipeCode(),
-      "infos": LiquidSwipeInfos()
+      "infos": LiquidSwipeInfos(),
+      "idCategoria": 80,
     },
     {
-      "codigo": PackTeste(),
-      "infos": PackTestInfos()
-    },
-    {
-      "codigo": PackTeste(),
-      "infos": PackTestInfos()
+      "codigo": NiceIntroCode(),
+      "infos": NiceIntroInfos(),
+      "idCategoria": 42,
     },
     
   ]; 
