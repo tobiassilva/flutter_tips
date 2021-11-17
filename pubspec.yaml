@@ -17,9 +17,11 @@ dependencies:
   animated_bottom_navigation_bar: ^0.3.2
   #build: ^2.1.1
   #dart_code_viewer: ^0.0.1
+  expandable: ^5.0.1
   flutter_mobx: ^2.0.2
   font_awesome_flutter: ^9.2.0
   #google_fonts: ^0.4.0
+  intro_views_flutter: ^3.2.0
   liquid_swipe: ^2.1.1
   mobx: ^2.0.0
   nice_intro: ^0.1.4
@@ -63,11 +65,11 @@ flutter:
     # Caminhos das Packages/codigos que aparecerão
 
     #categoria 42
+    - lib/pages/packages/listPackages/categoria42/intro_views_flutter/intro_views_flutter_code.dart
     - lib/pages/packages/listPackages/categoria42/nice_intro/nice_intro_code.dart
 
     #categoria 80
     - lib/pages/packages/listPackages/categoria80/liquid_swipe/liquid_swipe_code.dart
-
 
     # IMAGENS
 
@@ -82,7 +84,10 @@ flutter:
 
     # packages
     - assets/images/packages/app_installation-512.png
+    - assets/images/packages/Current_location-400.png
+    - assets/images/packages/London_amico-400.png
     - assets/images/packages/logo_viagem.png
+    - assets/images/packages/Scrapbooking_pana-400.png
     - assets/images/packages/Team_pana-300.png
     - assets/images/packages/Telecommuting_pana-300.png
 
@@ -98,13 +103,22 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Quicksand
+    - family: ComforterBrush
       fonts:
-        - asset: assets/fonts/quicksand/Quicksand-VariableFont_wght.ttf
+        - asset: assets/fonts/comforter_brush/ComforterBrush-Regular.ttf
         
     - family: IrishGrover
       fonts:
         - asset: assets/fonts/irish_grover/IrishGrover-Regular.ttf
+
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/quicksand/Quicksand-VariableFont_wght.ttf
+
+    - family: YujiMaiRegular
+      fonts:
+        - asset: assets/fonts/yuji_mai/YujiMai-Regular.ttf
+        
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
