@@ -11,7 +11,7 @@ class HomeWidgets {
   Widget homeWidgetsPrincipal(){
     return ListView(
       children: [
-        _capa(),
+        //_capa(),
         const SizedBox(height: 25,),
         _opcoesWidget()
       ],
@@ -57,6 +57,12 @@ class HomeWidgets {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _cardCategoria(FontAwesomeIcons.plus, 'Packages', HomePackagesPage()),
+          SizedBox(height: 20,),
+          _cardCategoria(FontAwesomeIcons.codepen, 'Widgets', null),
+          SizedBox(height: 20,),
+          _cardCategoria(FontAwesomeIcons.mobileAlt, 'Apps', null),
+          SizedBox(height: 20,),
+          _cardCategoria(FontAwesomeIcons.usersCog, 'UI/UX', null),
         ],
       ),
     );
@@ -79,9 +85,10 @@ class HomeWidgets {
             child: TextButton(
               style: TextButton.styleFrom(padding: EdgeInsets.all(0),),
               onPressed: (){
+                if(_rota != null){
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => _rota)
-                );
+                );}
               },
               child: Padding(
                 padding: EdgeInsets.fromLTRB(15, 12, 15, 12),
@@ -90,7 +97,7 @@ class HomeWidgets {
                     Container(
                       padding: EdgeInsets.all(6),
                       decoration: BoxDecoration(
-                        color: GlobalsStyles().primaryColor,
+                        color: _rota != null ? GlobalsStyles().primaryColor : GlobalsStyles().textColorFraco,
 
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(7),
@@ -110,14 +117,14 @@ class HomeWidgets {
                         _name,
                         style: TextStyle(
                           fontSize: GlobalsStyles().sizeSubtitulo,
-                          color: GlobalsStyles().textColorForte,
+                          color: _rota != null ? GlobalsStyles().textColorForte : GlobalsStyles().textColorFraco,
                         ),
                       ),
                     ),
 
                     Icon(
                       Icons.arrow_forward_ios,
-                      color: GlobalsStyles().textColorForte,
+                      color: _rota != null ? GlobalsStyles().textColorForte : GlobalsStyles().textColorFraco,
                       size: GlobalsStyles().sizeSubtitulo,
                     ),
                   ],

@@ -111,9 +111,17 @@ flutter:
       fonts:
         - asset: assets/fonts/irish_grover/IrishGrover-Regular.ttf
 
+    - family: PublicSansRegular
+      fonts:
+        - asset: assets/fonts/Public_Sans/static/PublicSans-Regular.ttf
+
     - family: Quicksand
       fonts:
         - asset: assets/fonts/quicksand/Quicksand-VariableFont_wght.ttf
+        
+    - family: ShipporiAntique
+      fonts:
+        - asset: assets/fonts/shippori_antique/ShipporiAntique-Regular.ttf
 
     - family: YujiMaiRegular
       fonts:

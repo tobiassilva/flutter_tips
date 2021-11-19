@@ -2,13 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:intro_views_flutter/intro_views_flutter.dart';
 
 class IntroViewsFlutterCode extends StatelessWidget {
+
   final pages = [
     PageViewModel(
-      pageColor: const Color(0xFF03A9F4),
-      // iconImageAssetPath: 'assets/air-hostess.png',
+      pageBackground: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            stops: [0.0, 1.0],
+            end: FractionalOffset.bottomCenter,
+            begin: FractionalOffset.topCenter,
+            tileMode: TileMode.repeated,
+            colors: [
+              Colors.blue,
+              Colors.lightBlueAccent
+            ]
+          ),
+        ),
+      ),
       bubble: Image.asset('assets/images/packages/Scrapbooking_pana-400.png'),
       body: const Text(
-        'Procurando os melhores lugares? Aí é com a Gente mesmo',
+        'Procurando os melhores lugares? Aí é com a gente mesmo!',
         textAlign: TextAlign.center,
       ),
       title: const Text(
@@ -19,11 +32,13 @@ class IntroViewsFlutterCode extends StatelessWidget {
       bodyTextStyle: const TextStyle(color: Colors.white),
       mainImage: Image.asset(
         'assets/images/packages/Scrapbooking_pana-400.png',
-        height: 285.0,
-        width: 285.0,
-        alignment: Alignment.center,
+        height: 280,
+        width: 280,
+        alignment: Alignment.center
       ),
     ),
+
+    
     PageViewModel(
       pageColor: const Color(0xFF8BC34A),
       iconImageAssetPath: 'assets/images/packages/Current_location-400.png',
@@ -35,27 +50,29 @@ class IntroViewsFlutterCode extends StatelessWidget {
         'Achou?',
         textAlign: TextAlign.center,
       ),
-      mainImage: Image.asset(
-        'assets/images/packages/Current_location-400.png',
-        height: 285.0,
-        width: 285.0,
-        alignment: Alignment.center,
-      ),
       titleTextStyle: const TextStyle(color: Colors.white),
       bodyTextStyle: const TextStyle(color: Colors.white),
+      mainImage: Image.asset(
+        'assets/images/packages/Current_location-400.png',
+        height: 280,
+        width: 280,
+        alignment: Alignment.center
+      ),
     ),
+
+    
     PageViewModel(
       pageBackground: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             stops: [0.0, 1.0],
-            begin: FractionalOffset.topCenter,
             end: FractionalOffset.bottomCenter,
+            begin: FractionalOffset.topCenter,
             tileMode: TileMode.repeated,
             colors: [
               Colors.orange,
               Colors.pinkAccent,
-            ],
+            ]
           ),
         ),
       ),
@@ -68,15 +85,14 @@ class IntroViewsFlutterCode extends StatelessWidget {
         'Prontinho!',
         textAlign: TextAlign.center,
       ),
+      titleTextStyle: const TextStyle(color: Colors.white),
+      bodyTextStyle: const TextStyle(color: Colors.white),
       mainImage: Image.asset(
         'assets/images/packages/London_amico-400.png',
-        height: 285.0,
-        width: 285.0,
-        alignment: Alignment.center,
+        height: 280,
+        width: 280,
+        alignment: Alignment.center
       ),
-      titleTextStyle:
-          const TextStyle(color: Colors.white),
-      bodyTextStyle: const TextStyle(color: Colors.white),
     ),
   ];
 
@@ -86,24 +102,24 @@ class IntroViewsFlutterCode extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'ComforterBrush'),
       home: Builder(
-        builder: (context) => IntroViewsFlutter(
+        builder: (_) => IntroViewsFlutter(
           pages,
           showNextButton: true,
           showBackButton: true,
-          onTapDoneButton: () {
-            // Use Navigator.pushReplacement if you want to dispose the latest route
-            // so the user will not be able to slide back to the Intro Views.
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => PaginaSeguinte()),
+          onTapDoneButton: (){
+            Navigator.push(context, 
+              MaterialPageRoute(builder: (context) => PaginaSeguinte())
             );
           },
+
           pageButtonTextStyles: const TextStyle(
             color: Colors.white,
-            fontSize: 18.0,
-          ),
+            fontSize: 18
+          )
+
         ),
       ),
+      
     );
   }
 }

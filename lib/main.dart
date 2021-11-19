@@ -2,6 +2,7 @@
 
 import 'package:flutter_tips/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tips/pages/packages/listPackages/categoria42/intro_views_flutter/intro_views_flutter_code.dart';
 import 'package:flutter_tips/pages/packages/view_package/view_package_functions.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
           //primarySwatch: Colors.blue,
           fontFamily: GlobalsStyles().fontePrincipal
         ),
-        home: const HomePage(),
+        home: IntroViewsFlutterCode(),
       ),
     );
   }
