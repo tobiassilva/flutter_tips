@@ -1,3 +1,5 @@
+import 'package:flutter_tips/pages/packages/listPackages/categoria3/animated_text_kit/animated_text_kit_code.dart';
+import 'package:flutter_tips/pages/packages/listPackages/categoria3/animated_text_kit/animated_text_kit_infos.dart';
 import 'package:flutter_tips/pages/packages/listPackages/categoria5/flutter_correios/flutter_correios_code.dart';
 import 'package:flutter_tips/pages/packages/listPackages/categoria5/flutter_correios/flutter_correios_infos.dart';
 
@@ -12,6 +14,17 @@ class GlobalsPackages {
   List categoriasPackages = [
     //a
     {
+      "id": 3,
+      "nome": "Animações",
+      "opcoes": [
+        {
+          "codigo": AnimatedTextKitCode(),
+          "infos": AnimatedTextKitInfos(),
+          "idCategoria": 3,
+        },
+      ]
+    },
+    {
       "id": 5,
       "nome": "API",
       "opcoes": [
@@ -23,13 +36,13 @@ class GlobalsPackages {
       ]
     },
     //b
-    {
+    /*{
       "id": 10,
       "nome": "Bottom Bar",
       "opcoes": [
 
       ]
-    },
+    },*/
     //c
     //d
     //e
@@ -64,13 +77,13 @@ class GlobalsPackages {
     //r
     //s
     //t
-    {
+    /*{
       "id": 74,
       "nome": "Tab Bar",
       "opcoes": [
 
       ]
-    },
+    },*/
     {
       "id": 80,
       "nome": "Transação de Páginas",

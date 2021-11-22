@@ -15,6 +15,7 @@ dependencies:
   flutter:
     sdk: flutter
   animated_bottom_navigation_bar: ^0.3.2
+  animated_text_kit: ^4.2.1
   #build: ^2.1.1
   #dart_code_viewer: ^0.0.1
   expandable: ^5.0.1
@@ -65,6 +66,9 @@ flutter:
   assets:
 
     # Caminhos das Packages/codigos que aparecerão
+
+    #categoria 3
+    - lib/pages/packages/listPackages/categoria3/animated_text_kit/animated_text_kit_code.dart
 
     #categoria 5
     - lib/pages/packages/listPackages/categoria5/flutter_correios/flutter_correios_code.dart
