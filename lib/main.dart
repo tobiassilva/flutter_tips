@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           //primarySwatch: Colors.blue,
           fontFamily: GlobalsStyles().fontePrincipal
         ),
-        home: IntroViewsFlutterCode(),
+        home: HomePage(),
       ),
     );
   }

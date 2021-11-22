@@ -14,8 +14,7 @@ class ViewPackagesWidgets {
   Widget codePackagesWidgets(String _caminhoCodigo) {
     return SourceCodeView(
       filePath: _caminhoCodigo,
-      codeLinkPrefix:
-          Variaveis().linkBaseGithub,
+      codeLinkPrefix: Variaveis().linkBaseGithub,
     );
   }
 
@@ -42,12 +41,23 @@ class ViewPackagesWidgets {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      "Versão Utilizada: ${_jsonInfos.versaoPackage}",
-                      style: TextStyle(
-                        color: GlobalsStyles().textColorForte,
-                        fontSize: GlobalsStyles().sizeTextMedio,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          "Versão Utilizada: ",
+                          style: TextStyle(
+                            color: GlobalsStyles().textColorMedio,
+                            fontSize: GlobalsStyles().sizeTextMedio,
+                          ),
+                        ),
+                        Text(
+                          "${_jsonInfos.versaoPackage}",
+                          style: TextStyle(
+                            color: GlobalsStyles().textColorForte,
+                            fontSize: GlobalsStyles().sizeTextMedio,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 )
@@ -59,12 +69,23 @@ class ViewPackagesWidgets {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      "Categoria: ${_viewPackageFunctions.categoriaPackage}",
-                      style: TextStyle(
-                        color: GlobalsStyles().textColorForte,
-                        fontSize: GlobalsStyles().sizeTextMedio,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          "Categoria: ",
+                          style: TextStyle(
+                            color: GlobalsStyles().textColorMedio,
+                            fontSize: GlobalsStyles().sizeTextMedio,
+                          ),
+                        ),
+                        Text(
+                          "${_viewPackageFunctions.categoriaPackage}",
+                          style: TextStyle(
+                            color: GlobalsStyles().textColorForte,
+                            fontSize: GlobalsStyles().sizeTextMedio,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 )
@@ -79,12 +100,12 @@ class ViewPackagesWidgets {
                     Text(
                       "Observações:",
                       style: TextStyle(
-                        color: GlobalsStyles().textColorForte,
+                        color: GlobalsStyles().textColorMedio,
                         fontSize: GlobalsStyles().sizeTextMedio,
                       ),
                     ),
                     Text(
-                      _jsonInfos.observacoes,
+                      "   ${_jsonInfos.observacoes}",
                       style: TextStyle(
                         color: GlobalsStyles().textColorForte,
                         fontSize: GlobalsStyles().sizeTextMedio,
@@ -105,8 +126,11 @@ class ViewPackagesWidgets {
                   height: 20,
                 ),
                 _jsonInfos.caminhoCodigo != ''
-                    ? _botaoPack('assets/images/geral/github_icon.png',
-                        "GitHub", Colors.black, "${Variaveis().linkBaseGithub}${_jsonInfos.caminhoCodigo}")
+                    ? _botaoPack(
+                        'assets/images/geral/github_icon.png',
+                        "GitHub",
+                        Colors.black,
+                        "${Variaveis().linkBaseGithub}${_jsonInfos.caminhoCodigo}")
                     : Container(),
                 SizedBox(
                   height: 20,
@@ -143,10 +167,10 @@ class ViewPackagesWidgets {
         ),
         onPressed: () async {
           if (await canLaunch('$_link')) {
-                await launch('$_link');
-              } else {
-                throw 'Página não encontrada';
-              }
+            await launch('$_link');
+          } else {
+            throw 'Página não encontrada';
+          }
         },
         child: Container(
           padding: EdgeInsets.fromLTRB(15, 8, 15, 8),

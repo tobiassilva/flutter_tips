@@ -1,3 +1,6 @@
+import 'package:flutter_tips/pages/packages/listPackages/categoria5/flutter_correios/flutter_correios_code.dart';
+import 'package:flutter_tips/pages/packages/listPackages/categoria5/flutter_correios/flutter_correios_infos.dart';
+
 import 'listPackages/categoria42/intro_views_flutter/intro_views_flutter_code.dart';
 import 'listPackages/categoria42/intro_views_flutter/intro_views_flutter_infos.dart';
 import 'listPackages/categoria42/nice_intro/nice_intro_code.dart';
@@ -8,6 +11,17 @@ import 'listPackages/categoria80/liquid_swipe/liquid_swipe_infos.dart';
 class GlobalsPackages {
   List categoriasPackages = [
     //a
+    {
+      "id": 5,
+      "nome": "API",
+      "opcoes": [
+        {
+          "codigo": FlutterCorreiosCode(),
+          "infos": FlutterCorreioInfos(),
+          "idCategoria": 5,
+        },
+      ]
+    },
     //b
     {
       "id": 10,

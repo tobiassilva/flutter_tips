@@ -18,6 +18,7 @@ dependencies:
   #build: ^2.1.1
   #dart_code_viewer: ^0.0.1
   expandable: ^5.0.1
+  flutter_correios: ^1.0.2
   flutter_mobx: ^2.0.2
   font_awesome_flutter: ^9.2.0
   #google_fonts: ^0.4.0
@@ -38,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dependency_overrides:
+  http: ^0.13.0
   google_fonts: ^2.0.0
   #convert: ^3.0.0
   #crypto: ^3.0.1
@@ -64,6 +66,9 @@ flutter:
 
     # Caminhos das Packages/codigos que aparecerão
 
+    #categoria 5
+    - lib/pages/packages/listPackages/categoria5/flutter_correios/flutter_correios_code.dart
+
     #categoria 42
     - lib/pages/packages/listPackages/categoria42/intro_views_flutter/intro_views_flutter_code.dart
     - lib/pages/packages/listPackages/categoria42/nice_intro/nice_intro_code.dart
@@ -84,6 +89,7 @@ flutter:
 
     # packages
     - assets/images/packages/app_installation-512.png
+    - assets/images/packages/correio_img.png
     - assets/images/packages/Current_location-400.png
     - assets/images/packages/London_amico-400.png
     - assets/images/packages/logo_viagem.png
