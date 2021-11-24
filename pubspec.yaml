@@ -28,6 +28,7 @@ dependencies:
   mobx: ^2.0.0
   nice_intro: ^0.1.4
   provider: ^6.0.1
+  smooth_star_rating: ^1.1.1
   url_launcher: ^5.7.10
   #shelf: ^1.0.0
   widget_with_codeview: ^1.0.5
@@ -80,10 +81,14 @@ flutter:
     #categoria 80
     - lib/pages/packages/listPackages/categoria80/liquid_swipe/liquid_swipe_code.dart
 
+    # Caminhos de UI/UX que aparecerão
+    - lib/pages/ui_ux/listUiUx/categoria980/viagens1/viagens1_code.dart
+
     # IMAGENS
 
     # auxiliares
     - assets/images/auxiliares/hello_black.png
+    - assets/images/auxiliares/profile1.jpg
 
     # geral
     - assets/images/geral/capa_learning.jpg
@@ -100,6 +105,12 @@ flutter:
     - assets/images/packages/Scrapbooking_pana-400.png
     - assets/images/packages/Team_pana-300.png
     - assets/images/packages/Telecommuting_pana-300.png
+    
+    # UI/UX
+    - assets/images/ui_ux/boat.jpg
+    - assets/images/ui_ux/mountains.jpg
+    - assets/images/ui_ux/paodeacucar.jpg
+    - assets/images/ui_ux/train-ice.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

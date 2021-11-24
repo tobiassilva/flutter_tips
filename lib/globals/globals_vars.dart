@@ -7,7 +7,7 @@ class Variaveis {
 class GlobalsStyles {
   var fontePrincipal = 'PublicSansRegular';
   var primaryColor = const Color.fromRGBO(240, 165, 0, 1);
-  var secundaryColor = const Color.fromRGBO(230, 230, 230, 1);
+  var secundaryColor = const Color.fromRGBO(240, 240, 240, 1);
   var tertiaryColor = const Color.fromRGBO(51, 71, 86, 1);
 
   var cardsColor = const Color.fromRGBO(250, 250, 250, 1);

@@ -7,6 +7,7 @@ import 'package:flutter_tips/pages/packages/view_package/view_package_functions.
 import 'package:provider/provider.dart';
 
 import 'globals/globals_vars.dart';
+import 'pages/ui_ux/viewUiUx/view_uiux_functions.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
+      providers: [ 
         //Functions
         Provider<ViewPackageFunctions>(create: (_) => ViewPackageFunctions(context),),
+        Provider<ViewUiUxFunctions>(create: (_) => ViewUiUxFunctions(context),),
       ],
       child: MaterialApp(
         title: 'Flutter Tips',

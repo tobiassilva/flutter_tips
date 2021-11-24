@@ -2,6 +2,7 @@ import 'package:flutter_tips/globals/globals_vars.dart';
 import 'package:flutter_tips/globals/globals_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tips/pages/packages/home_packages_page.dart';
+import 'package:flutter_tips/pages/ui_ux/home_ui_ux_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeWidgets {
@@ -58,11 +59,11 @@ class HomeWidgets {
         children: [
           _cardCategoria(FontAwesomeIcons.plus, 'Packages', HomePackagesPage()),
           SizedBox(height: 20,),
+          _cardCategoria(FontAwesomeIcons.usersCog, 'UI/UX', HomeUiUxPage()),
+          SizedBox(height: 20,),
           _cardCategoria(FontAwesomeIcons.codepen, 'Widgets', null),
           SizedBox(height: 20,),
           _cardCategoria(FontAwesomeIcons.mobileAlt, 'Apps', null),
-          SizedBox(height: 20,),
-          _cardCategoria(FontAwesomeIcons.usersCog, 'UI/UX', null),
         ],
       ),
     );

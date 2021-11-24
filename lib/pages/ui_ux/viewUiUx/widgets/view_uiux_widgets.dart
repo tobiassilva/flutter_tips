@@ -4,11 +4,14 @@ import 'package:flutter_tips/globals/globals_widgets.dart';
 import 'package:flutter_tips/pages/packages/view_package/view_package_functions.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+//import 'package:dart_code_viewer/dart_code_viewer.dart';
 import 'package:widget_with_codeview/source_code_view.dart';
 
-class ViewPackagesWidgets {
+import '../view_uiux_functions.dart';
+
+class ViewUiUxWidgets {
   BuildContext context;
-  ViewPackagesWidgets(this.context);
+  ViewUiUxWidgets(this.context);
 
   Widget codeWidgets(String _caminhoCodigo) {
     return SourceCodeView(
@@ -22,7 +25,7 @@ class ViewPackagesWidgets {
   }
 
   Widget infosWidgets(_jsonInfos) {
-    final _viewFunctions = Provider.of<ViewPackageFunctions>(context);
+    final _viewFunctions = Provider.of<ViewUiUxFunctions>(context);
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
@@ -33,35 +36,7 @@ class ViewPackagesWidgets {
           ),
           GlobalsWidgets()
               .subtituloComBarra(_jsonInfos.nome, GlobalsStyles().sizeTitulo),
-          _jsonInfos.versaoPackage != ''
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "Versão Utilizada: ",
-                          style: TextStyle(
-                            color: GlobalsStyles().textColorMedio,
-                            fontSize: GlobalsStyles().sizeTextMedio,
-                          ),
-                        ),
-                        Text(
-                          "${_jsonInfos.versaoPackage}",
-                          style: TextStyle(
-                            color: GlobalsStyles().textColorForte,
-                            fontSize: GlobalsStyles().sizeTextMedio,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                )
-              : Container(),
-          _viewFunctions.categoriaPackage != ''
+          _viewFunctions.categoria != ''
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -78,7 +53,7 @@ class ViewPackagesWidgets {
                           ),
                         ),
                         Text(
-                          "${_viewFunctions.categoriaPackage}",
+                          "${_viewFunctions.categoria}",
                           style: TextStyle(
                             color: GlobalsStyles().textColorForte,
                             fontSize: GlobalsStyles().sizeTextMedio,
@@ -117,13 +92,6 @@ class ViewPackagesWidgets {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _jsonInfos.linkPackage != ''
-                    ? _botaoPack('assets/images/geral/dart_icon.png', "Pub.dev",
-                        Color.fromRGBO(28, 40, 52, 1), _jsonInfos.linkPackage)
-                    : Container(),
-                SizedBox(
-                  height: 20,
-                ),
                 _jsonInfos.caminhoCodigo != ''
                     ? _botaoPack(
                         'assets/images/geral/github_icon.png',

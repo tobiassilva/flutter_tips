@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tips/pages/packages/globals_packages.dart';
+import 'package:flutter_tips/pages/ui_ux/globals_ui_ux.dart';
 
-class ViewPackageFunctions {
+class ViewUiUxFunctions {
   BuildContext context;
-  ViewPackageFunctions(this.context);
+  ViewUiUxFunctions(this.context);
 
 
-  late String categoriaPackage;
+  late String categoria;
 
   Future iniciaPage(_jsonRecebido) async {
-    GlobalsPackages().categoriasPackages.forEach((element) { 
+    GlobalsUiUx().categorias.forEach((element) { 
       if(element['id'] == _jsonRecebido['infos'].idCategoria) {
-        categoriaPackage = element['nome'];
+        categoria = element['nome'];
         return;
       }
     });

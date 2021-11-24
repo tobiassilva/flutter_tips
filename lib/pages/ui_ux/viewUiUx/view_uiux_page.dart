@@ -2,22 +2,23 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_tips/globals/globals_vars.dart';
 import 'package:flutter_tips/pages/packages/view_package/view_package_functions.dart';
+import 'package:flutter_tips/pages/ui_ux/viewUiUx/view_uiux_functions.dart';
+import 'package:flutter_tips/pages/ui_ux/viewUiUx/widgets/view_uiux_widgets.dart';
 import 'package:provider/provider.dart';
 
-import 'widgets/view_packages_widgets.dart';
 
-class ViewPackagePage extends StatefulWidget {
+class ViewUiUxPage extends StatefulWidget {
   var _jsonRecebido;
-  ViewPackagePage(this._jsonRecebido);
+  ViewUiUxPage(this._jsonRecebido);
 
   @override
-  _ViewPackagePageState createState() => _ViewPackagePageState(_jsonRecebido);
+  _ViewUiUxPageState createState() => _ViewUiUxPageState(_jsonRecebido);
 }
 
-class _ViewPackagePageState extends State<ViewPackagePage>
+class _ViewUiUxPageState extends State<ViewUiUxPage>
     with TickerProviderStateMixin {
   var _jsonRecebido;
-  _ViewPackagePageState(this._jsonRecebido);
+  _ViewUiUxPageState(this._jsonRecebido);
 
   late AnimationController _animationController;
   var _bottomNavIndex = 2;
@@ -35,7 +36,7 @@ class _ViewPackagePageState extends State<ViewPackagePage>
     "Infos",
   ];
 
-  late ViewPackageFunctions viewPackageFunctions;
+  late ViewUiUxFunctions viewUiUxFunctions;
 
   @override
   void initState() {
@@ -68,18 +69,18 @@ class _ViewPackagePageState extends State<ViewPackagePage>
 
   @override
   void didChangeDependencies() {
-    viewPackageFunctions = Provider.of<ViewPackageFunctions>(context);
+    viewUiUxFunctions = Provider.of<ViewUiUxFunctions>(context);
     _iniciaPage();
     super.didChangeDependencies();
   }
 
   Future _iniciaPage() async {
-    await viewPackageFunctions.iniciaPage(_jsonRecebido);
+    await viewUiUxFunctions.iniciaPage(_jsonRecebido);
   }
 
   @override
   Widget build(BuildContext context) {
-    final _viewWidgets = ViewPackagesWidgets(context);
+    final _viewWidgets = ViewUiUxWidgets(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: GlobalsStyles().fontePrincipal),
@@ -88,36 +89,7 @@ class _ViewPackagePageState extends State<ViewPackagePage>
           backgroundColor: GlobalsStyles().secundaryColor,
           body: Container(
             height: MediaQuery.of(context).size.height,
-            child: _viewTela
-            //VER EM TELA CHEIA
-                ? Column(
-                    children: [
-                      Material(
-                        elevation: 2,
-                        child: Container(
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          child: Row(
-                            children: [
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _viewTela = false;
-                                  });
-                                },
-                                icon: Icon(Icons.close,
-                                    size: GlobalsStyles().sizeSubtitulo,
-                                    color: GlobalsStyles().textColorForte),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                          child: _viewWidgets
-                              .viewWidgets(_jsonRecebido["codigo"]))
-                    ],
-                  )
-                : _bottomNavIndex == 1
+            child: _bottomNavIndex == 1
                     ? _viewWidgets
                         .infosWidgets(_jsonRecebido["infos"])
                     : _bottomNavIndex == 2
@@ -150,8 +122,7 @@ class _ViewPackagePageState extends State<ViewPackagePage>
               : null,
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar: !_viewTela
-              ? AnimatedBottomNavigationBar.builder(
+          bottomNavigationBar: AnimatedBottomNavigationBar.builder(
                   itemCount: iconList.length,
                   tabBuilder: (int index, bool isActive) {
                     final color = isActive
@@ -186,7 +157,10 @@ class _ViewPackagePageState extends State<ViewPackagePage>
                     if (index == 0) {
                       //visualizar
                       //_bottomNavIndex = index;
-                      _viewTela = true;
+                      //_viewTela = true;
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => _jsonRecebido["codigo"])
+                      );
                     } else {
                       _bottomNavIndex = index;
                       print("index =>>> $index");
@@ -201,8 +175,7 @@ class _ViewPackagePageState extends State<ViewPackagePage>
 
                   //notchAndCornersAnimation: animation,
                   //splashSpeedInMilliseconds: 300,
-                )
-              : null,
+                ),
         ),
       ),
     );
