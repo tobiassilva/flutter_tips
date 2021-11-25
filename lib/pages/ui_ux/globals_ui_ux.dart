@@ -1,8 +1,7 @@
-
-
-
 import 'package:flutter_tips/pages/ui_ux/listUiUx/categoria980/viagens1/viagens1_code.dart';
 
+import 'listUiUx/categoria159/instaAnalytics/insta_analytics_code.dart';
+import 'listUiUx/categoria159/instaAnalytics/insta_analytics_infos.dart';
 import 'listUiUx/categoria980/viagens1/viagens1_infos.dart';
 
 class GlobalsUiUx {
@@ -11,6 +10,17 @@ class GlobalsUiUx {
     //b100
     //c150
     //d200
+    {
+      "id": 159,
+      "nome": "Dashboard",
+      "opcoes": [
+        {
+          "codigo": InstaAnalyticsCode(),
+          "infos": InstaAnalyticsInfos(),
+          "idCategoria": 159,
+        },
+      ]
+    },
     //e250
     //f300
     //g350
@@ -34,7 +44,7 @@ class GlobalsUiUx {
         {
           "codigo": Viajens1Code(),
           "infos": Viajens1Infos(),
-          "idCategoria": 3,
+          "idCategoria": 980,
         },
       ]
     },
